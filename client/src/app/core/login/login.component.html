@@ -1,0 +1,31 @@
+<div align="center" style="margin-top: 25px">
+  <mat-card class="card card-basic">
+
+    <mat-card fxFlexAlign="center" style="background-color:#3f51b5; color:white;">
+      <img  class="hideIfBig" fxFlexAlign="center" src="/assets/main_logo/24172416_773875089480587_180254014_n.png" style="width:40%; ">
+      <img  class="hideIfSmall" fxFlexAlign="center" src="/assets/main_logo/24172447_773875096147253_492446468_n.png" style="width:80%; ">
+
+      <h2>Log In</h2>
+    </mat-card>
+    <mat-card-content>
+      <form class="login-form">
+        <table class="full-width" cellspacing="1">
+            <div fxLayout="row">
+              <mat-form-field class="full-width">
+                <input matInput id="username" placeholder="Username" type="text" name="username" [(ngModel)]="model.username">
+              </mat-form-field>
+            </div>
+          <div fxLayout="row">
+            <mat-form-field class="full-width">
+              <input matInput id="password" placeholder="Password" type="password" name="password" [(ngModel)]="model.password">
+            </mat-form-field>
+          </div>
+        </table>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="login()">Login <mat-icon>send</mat-icon></button>
+          <button mat-raised-button color="primary" [routerLink]="['/register']">Register <mat-icon>build</mat-icon></button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

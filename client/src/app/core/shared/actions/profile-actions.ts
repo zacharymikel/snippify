@@ -1,0 +1,4 @@
+export const PROFILE_LOADED = 'PROFILE_LOADED';
+export const PROFILE_FEED_LOADED = 'PROFILE_FEED_LOADED';
+export const UPDATE_FEED = 'UPDATE_FEED';
+export const REMOVE_SONG = 'REMOVE_SONG';

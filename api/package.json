@@ -1,0 +1,45 @@
+{
+  "name": "audibit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=TEST && nodemon server.js",
+    "start": "export NODE_ENV=DEVELOPMENT && nodemon server.js",
+    "start_win": "nodemon server.js",
+    "debug": "export NODE_ENV=DEVELOPMENT && nodemon $NODE_DEBUG_OPTION server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/joeycarmona/Audibit.git"
+  },
+  "author": "Zachary Mikel, Joseph Carmona, Melissa Bower",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/joeycarmona/Audibit/issues"
+  },
+  "homepage": "https://gitlab.com/joeycarmona/Audibit#README",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "^2.6.9",
+    "express": "~4.15.2",
+    "express-fileupload": "^0.3.0",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.2.1",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.11.12",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "~1.8.1",
+    "node-cmd": "^3.0.0",
+    "nodemon": "1.12.0",
+    "passport": "~0.2.0",
+    "passport-jwt": "^3.0.0",
+    "passport-local": "~1.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~angular2-toaster/toaster.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~material-design-icons/iconfont/material-icons.css';
+@import './iconizr-svg-sprite.css';
+
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.infinite-scroll {
+  overflow-y: scroll;
+  height: 500px;
+}
+
+body{
+  margin:0px;
+  background-color: #323840;
+  font-family: 'Poiret One', cursive;
+
+}
+.mat-icon-button{
+  height:32px !important;
+  width:32px !important;
+}

@@ -1,0 +1,43 @@
+.card {
+  max-width: 40%;
+  margin: 16px;
+}
+
+.card-basic {
+  padding: 0px;
+}
+
+.avatar {
+  max-height: 50px;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1026px) {
+  .card {
+    max-width: 60%;
+    margin: 16px;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .card {
+    max-width: 70%;
+    margin: 16px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .card {
+    max-width: 80%;
+    margin: 16px;
+  }
+}
+ 
+
+ /*# sourceMappingURL= feed-item.component.css.map */

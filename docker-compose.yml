@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  api:
+    image: joeycarmona42/audibit-api
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./mongo_data:/data/db
+  nginx:
+    image: joeycarmona42/audibit-nginx:v0
+    ports:
+      - 9000:80

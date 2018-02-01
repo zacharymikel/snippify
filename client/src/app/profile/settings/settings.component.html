@@ -1,0 +1,43 @@
+<div align="center" >
+  <mat-card class="card-basic card " >
+    <mat-toolbar class="hideIfBig" color="primary">User Settings</mat-toolbar>
+    <mat-card class="hideIfSmall"fxFlexAlign="center" style="background-color:slategrey;color:white; ">
+      <img  class="mat-elevation-z5"fxFlexAlign="center" src="/assets/nav_logo/076-wrench.svg" style="width:20%; border-radius: 50%">
+      <h2>User Settings</h2>
+    </mat-card>
+    <mat-card-content>
+      <form class="login-form">
+        <mat-form-field class="input-full-width">
+          <input matInput name="username" placeholder="Username" [(ngModel)]="settings.username" type="text">
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <input matInput name="name" placeholder="Full Name" [(ngModel)]="settings.name" type="text">
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <input matInput name="email" placeholder="Email (disabled)" [(ngModel)]="settings.email" type="text" disabled>
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <textarea matInput name="bio" placeholder="Bio" [(ngModel)]="settings.bio"></textarea>
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <input matInput name="websiteUrl" placeholder="Website Url" [(ngModel)]="settings.websiteUrl" type="text">
+        </mat-form-field>
+        <br>
+        <div style="margin-bottom: 10px">
+          <label for="profilePicture">Profile Picture:</label>
+          <input id="profilePicture" placeholder="Profile Picture" type="file" (change)="profilePictureFileChange($event)">
+        </div>
+        <br>
+        <div style="margin-bottom: 10px">
+          <label for="bannerPicture">Banner Picture</label>
+          <input id="bannerPicture" placeholder="Profile Banner" type="file" (change)="bannerFileChange($event)">
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="save()">Save<mat-icon>save</mat-icon></button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

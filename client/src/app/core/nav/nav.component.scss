@@ -1,0 +1,76 @@
+@media only screen and (max-width: 1026px) {
+  .hide {
+    display: none;
+  }
+  .mat-toolbar {
+    padding: 0;
+  }
+  .mat-button{
+    min-width:0px;
+  }
+  .mat-button{
+    padding:9px;
+  }
+}
+@media only screen and (min-width: 1026px) {
+  .hideBig {
+    display:none
+  }
+
+}
+@media only screen and (min-width: 1026px) {
+  .hideBig {
+    display:none
+  }
+  .mat-toolbar.mat-primary {
+    background: #3f51b5;
+    color: rgba(255,255,255,.87);
+    padding: 0;
+  }
+
+}
+button.wat.mat-button{
+  padding:0px;
+}
+.button-profile{
+
+  height: 50px;
+  width: 50px;
+  background-image:url('http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png');
+  background-repeat:no-repeat;
+
+}
+.example-card {
+  width: 30%;
+  margin-top: 35px;
+  background-color: #00e5ff;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+.card-basic {
+  padding: 0;
+}
+.card-basic .mat-card-content {
+  padding: 16px;
+}
+.input-half-width {
+  width: 50%;
+}
+
+.card {
+  margin: 16px;
+}
+
+.card-text-align-end {
+  text-align: start;
+}
+
+.card-textarea {
+  resize: none;
+  border: none;
+  overflow: auto;
+  padding: 0;
+  background: lightblue;
+}

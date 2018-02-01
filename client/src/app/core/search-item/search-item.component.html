@@ -1,0 +1,32 @@
+<div align="center" style="margin-bottom: 50px;" >
+  <mat-card class="card card-basic" >
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+      <a mat-card-avatar class="header-image" [style.background-image]="profilePicture" (click)="goToProfile()"></a>
+      <mat-card-title>{{user.username}}</mat-card-title>
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                Biography
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div style="text-align: left">
+              <p>{{user.bio || ''}}</p>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                Social Media Links
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div style="text-align: left">
+            <p><a href="{{user.websiteUrl}}">{{user.websiteUrl || ''}}</a></p>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<div align="center" style="margin-top: 25px;">
+  <mat-card class="card-basic card " >
+      <mat-toolbar  color="primary" class="mat-elevation-z6 hideIfBig">
+        <h1>User Search</h1>
+      </mat-toolbar>
+    <mat-card class="hideIfSmall"fxFlexAlign="center" style="background-color:indianred; color:white;">
+      <img  class="mat-elevation-z5" fxFlexAlign="center" src="/assets/nav_logo/077-search-1.svg" style="width:20%; border-radius:50%;">
+      <h2>User Search</h2>
+    </mat-card>
+      <mat-card-content>
+        <form (submit)="search()">
+            <div fxLayout="row">
+              <mat-form-field>
+                <input matInput class="search-input" type="text" name="searchQuery" [(ngModel)]="searchQuery" placeholder="Search For User">
+              </mat-form-field>
+              <button mat-raised-button type="submit">Search</button>
+            </div>
+          </form>
+      </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="search-container" align="center">
+  <h1 *ngIf="dataLoaded && (state$ | async).users.length === 0" style="color: white;">No users exist with that username <mat-icon>sentiment_very_dissatisfied</mat-icon></h1>
+  <app-search-item *ngFor="let user of (state$ | async).users" [user]="user"></app-search-item>
+</div>

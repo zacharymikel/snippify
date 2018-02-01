@@ -1,0 +1,38 @@
+<div align="center" class="card"  >
+  <mat-card class=" card-basic" >
+    <mat-toolbar color="primary" class="mat-elevation-z6" >
+      <a mat-card-avatar class="mat-elevation-z5" style="max-height: 50px; margin-right: 15px; background-size: 50px;" [style.background-image]="profilePicture" (click)="goToProfile()"></a>
+       {{song.artist.name}}
+      <span class="fill-remaining-space"></span>
+      <button mat-icon-button mat-button (click)="toggle()"><div [ngClass]="(isMe() && playerStatus === 'playing') ? 'icon icon-091-pause icon-091-pause-dims ' :  'icon icon-092-play-button icon-092-play-button-dims'"></div></button>
+    </mat-toolbar>
+  <mat-card >
+    <mat-card-content>
+      <img [src]="albumPicture" style="max-width: 75%;">
+
+    </mat-card-content>
+  </mat-card>
+    <mat-card>
+      <div style="float:right; margin-top:1px;">
+
+        <button  *ngIf="!canDelete" mat-button mat-icon-button ><div [ngClass]="(isMe() && playerStatus === 'playing') ? ' icon icon-090-musical-note icon-090-musical-note-dims ' :  'icon icon-100-shapes icon-100-shapes-dims'"></div></button>
+        <button  *ngIf="canDelete" mat-button mat-icon-button style="color: red; text-align:right" (click)="delete()"><mat-icon>delete_forever</mat-icon></button>
+
+      </div>
+      <mat-card-content >
+
+        <h3 style="text-align:left;  margin-bottom:0px;  ">{{song.title}}</h3>
+        <p style="text-align:left;  "*ngIf="song.description" > {{song.description || ''}}</p>
+        <p *ngIf="song.tags" style="font-size:12px;text-align:left;  margin-bottom:1px; ">Tags: <span *ngFor="let tag of genreTags">{{tag.name}}, </span></p>
+
+
+
+      </mat-card-content>
+
+
+
+
+
+    </mat-card>
+  </mat-card>
+</div>

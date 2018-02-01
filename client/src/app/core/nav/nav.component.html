@@ -1,0 +1,61 @@
+<mat-toolbar fxLayout="row" align="center" color="primary"  class="mat-toolbar mat-elevation-z6">
+  <div *ngIf="user"  style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('home')" height="100%" (mouseleave)="hoverOut('home')" (mouseout)="hoverIn('home')"  routerLink="/">
+      <img  class="hideBig"style="height: 100%;width: auto;" *ngIf=" this.router.url ==='/'" src="/assets/main_logo/24172416_773875089480587_180254014_n.png">
+      <span class="hideBig" style="height: 100%;width: auto;"  *ngIf=" this.router.url !=='/'">Home</span>
+      <img class="hide"style="height: 50px;width: 50px;" *ngIf="isHover('home')===false|| this.router.url ==='/'" src="/assets/main_logo/24172416_773875089480587_180254014_n.png">
+      <span class="hide"style="height: 100%;width: auto;"  *ngIf="isHover('home')===true && this.router.url !=='/'">Feed</span>
+
+    </button>
+  </div>
+
+  <div  *ngIf="user" style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/upload-song'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('uploadSong')" height="100%" (mouseleave)="hoverOut('uploadSong')" (mouseout)="hoverIn('uploadSong')" routerLink="/upload-song">
+      <img  class="hideBig"style="height: 100%;width: auto;" *ngIf=" this.router.url ==='/upload-song'" src="/assets/nav_logo/048-signs-2.svg">
+      <span class="hideBig"style="height: 100%;width: auto;"  *ngIf=" this.router.url !=='/upload-song'">Upload</span>
+      <span  class="hide" style="height: 100%;width: auto;">Upload Song</span>
+    </button>
+  </div>
+  <div class="hide" *ngIf="user" style="height: 100%;width: auto;">
+  <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/settings'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('settings')" height="100%" (mouseleave)="hoverOut('settings')" (mouseout)="hoverIn('settings')"routerLink="/settings">
+    <span  style="height: 100%;width: auto;">Settings</span>
+  </button>
+  </div>
+  <div *ngIf="user" style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/search'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('search')" height="100%" (mouseleave)="hoverOut('search')" (mouseout)="hoverIn('search')" routerLink="/search">
+      <img class="hideBig" style="height: 100%;width: auto;" *ngIf="this.router.url ==='/search'" src="/assets/nav_logo/077-search-1.svg">
+      <span class="hideBig" style="height: 100%;width: auto;"  *ngIf="this.router.url !=='/search'">Search</span>
+      <span  class="hide" style="height: 100%;width: auto;">Search</span>
+    </button>
+  </div>
+  <span  class=" hide fill-remaining-space "></span>
+
+  <div *ngIf="user" style="height: 100%;width: auto;">
+    <button  [ngClass]="{'mat-elevation-z6' : this.router.url === '/profile'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('profile')" height="100%" (mouseleave)="hoverOut('profile')" (mouseout)="hoverIn('profile')" (click)="goToProfile()">
+      <img class="hide"style="height: 50px;width: 50px;" *ngIf="isHover('profile')===false|| this.router.url ==='/profile'" src="/assets/nav_logo/086-customer-service.svg">
+      <span class="hide"style="height: 100%;width: auto;"  *ngIf="isHover('profile')===true && this.router.url !=='/profile'">Profile</span>
+      <img class="hideBig"style="height: 100%;width: auto;" *ngIf="this.router.url ==='/profile'" src="/assets/nav_logo/086-customer-service.svg">
+      <span class="hideBig"style="height: 100%;width: auto;"  *ngIf="this.router.url !=='/profile'">Profile</span>
+    </button>
+  </div>
+  <div *ngIf="user" style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/logOut'}"  style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('logOut')" height="100%" (mouseleave)="hoverOut('logOut')" (mouseout)="hoverIn('logOut')"(click)="logout()">
+      <span class="hideBig"style="height: 100%;width: auto;" >Log Out</span>
+      <span  class="hide" style="height: 100%;width: auto;">Log Out</span>
+    </button>
+  </div>
+  <div *ngIf="!user" style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/login'}" style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('logIn')" height="100%" (mouseleave)="hoverOut('logIn')" (mouseout)="hoverIn('logIn')" (click)="logout()">
+      <img  class="hideBig" style="height: 100%;width: auto;" *ngIf="this.router.url === '/login'" src="/assets/main_logo/24172416_773875089480587_180254014_n.png">
+      <span  class="hideBig" style="height: 100%;width: auto;"  *ngIf="this.router.url !=='/login'">Log In</span>
+      <span  class="hide" style="height: 100%;width: auto;">Log In</span>
+    </button>
+  </div>
+  <div *ngIf="!user" style="height: 100%;width: auto;">
+    <button [ngClass]="{'mat-elevation-z6' : this.router.url === '/register'}"  class="mat-elevation-z6" style="height: 100%;width: auto;" mat-button (mouseenter)="hoverIn('register')" height="100%" (mouseleave)="hoverOut('register')" (mouseout)="hoverIn('register')" routerLink="register">
+      <img class="hideBig" style="height: 100%;width: auto;" *ngIf="this.router.url === '/register'" src="/assets/nav_logo/001-user-2.svg">
+      <span class="hideBig" style="height: 100%;width: auto;"  *ngIf="this.router.url !=='/register'">Register</span>
+      <span class="hide" style="height: 100%;width: auto;">Register</span>
+    </button>
+  </div>
+</mat-toolbar>

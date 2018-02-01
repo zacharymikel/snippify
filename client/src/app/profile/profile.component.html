@@ -1,0 +1,30 @@
+<div fxFlex="flex" fxLayout="row">
+  <mat-card class="profile-card" [style.background-image]="bannerPicture"  >
+    <mat-card-content style="height: 65%">
+      <div fxLayout="row" fxFlex="flex">
+        <div style="display: table;">
+          <div style="display: table-cell; vertical-align: center">
+            <img class="profile-image mat-elevation-z7" [src]="profilePicture" style="max-width: 200px; max-height: 200px">
+            <div class="profile-username ">{{(state$ | async).userProfile.username}}</div>
+
+
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer style="padding-right: 16px">
+      <mat-card-actions>
+          <div *ngIf="!canDelete()" fxLayout="row" fxFlex="flex" align="end" style="margin-right: 10px">
+              <button *ngIf="!follows()" mat-raised-button (click)="follow()">Follow</button>
+              <button *ngIf="follows()" mat-raised-button (click)="unfollow()">Unfollow</button>
+          </div>
+        </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>
+<div align="center">
+  <app-feed-item *ngFor="let song of (state$ | async).userSongs" [song]="song" [snippet]="false" [canDelete]="canDelete()"></app-feed-item>
+  <div *ngIf="(state$ | async).userSongs.length === 0" align="center">
+      <h1 style="color: white">{{canDelete() ? 'You have' : 'This user has'}} not uploaded any songs <mat-icon>sentiment_very_dissatisfied</mat-icon></h1>
+    </div>
+</div>

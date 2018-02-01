@@ -1,0 +1,65 @@
+<div align="center">
+  <mat-card class=" card card-basic">
+    <mat-toolbar class="hideIfBig"color="primary">Upload a Song</mat-toolbar>
+    <mat-card class="hideIfSmall"fxFlexAlign="center" style="background-color:darksalmon; color:white;">
+      <img  class="mat-elevation-z5" fxFlexAlign="center" src="/assets/nav_logo/048-signs-2.svg" style="width:20%; border-radius:50%;">
+      <h2>Upload a Song</h2>
+    </mat-card>
+    <mat-card-content>
+      <form class="login-form">
+        <mat-form-field class="input-half-width" >
+              <input matInput  id="songTitle" placeholder="Song Title" type="text" name="title" [(ngModel)]="model.songName" >
+            </mat-form-field>
+          <div fxLayout="row">
+            <mat-form-field class="demo-chip-list input-half-width">
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                          [removable]="removable" (remove)="remove(fruit)">
+                  {{fruit.name}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Genre Tags..."
+                       [matChipInputFor]="chipList"
+                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                       [matChipInputAddOnBlur]="addOnBlur"
+                       (matChipInputTokenEnd)="add($event)"
+                       name="genreTags"/>
+              </mat-chip-list>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row">
+            <mat-form-field class="input-half-width">
+              <textarea matInput id="description" placeholder="Description" type="text" name="description" [(ngModel)]="model.description"></textarea>
+            </mat-form-field>
+          </div>
+        <div fxLayout="row">
+          <div class="input-half-width">
+            <h3 style="margin-left: -165px;">Song</h3>
+            <input id="fileUpload" placeholder="Description" type="file" name="fileUpload" (change)="fileChange($event)" style="margin-left: 25px">
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div class="input-half-width">
+            <h3 style="margin-left: -135px;">Album Art</h3>
+            <input id="image" placeholder="Album art" type="file" name="image" (change)="imageChange($event)" style="margin-left: 25px">
+          </div>
+        </div>
+        <div fxLayout="row">
+          <mat-form-field class="input-half-width">
+            <input matInput id="beginSnippet" placeholder="Begining of Snippet" type="text" name="being" [(ngModel)]="model.start">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row">
+          <mat-form-field class="input-half-width">
+            <input matInput id="endSnippet" placeholder="End of Snippet" type="text" name="end" [(ngModel)]="model.end">
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="upload()">Upload <mat-icon>build</mat-icon></button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

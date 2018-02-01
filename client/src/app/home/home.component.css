@@ -1,0 +1,44 @@
+.example-card {
+  width: 30%;
+  margin-top: 35px;
+  background-color: #00e5ff;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.card-basic {
+  padding: 0;
+}
+
+.card-basic .mat-card-content {
+  padding: 16px;
+}
+
+.input-half-width {
+  width: 50%;
+}
+
+.card {
+  margin: 16px;
+}
+
+.card-text-align-end {
+  text-align: start;
+}
+
+.card-textarea {
+  resize: none;
+  border: none;
+  overflow: auto;
+  padding: 0;
+  background: lightblue;
+}
+
+.shadow {
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.4);
+}
+ 
+
+ /*# sourceMappingURL= home.component.css.map */

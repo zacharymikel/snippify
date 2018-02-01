@@ -1,0 +1,14 @@
+{
+  "dbUrl": "mongodb://localhost/audibitdb",
+  "apiUrl": "/api",
+
+  "jwtOptions": {
+    "secretOrKey": "random32bytestring",
+    "expiresIn": "24h"
+  },
+  "jwtSession": {
+    "session": true
+  },
+
+  "registerEmails": ["zacharymikel@u.boisestate.edu", "joeycarmona@u.boisestate.edu", "tylerwigington@u.boisestate.edu", "melissaclausen@u.boisestate.edu"]
+}

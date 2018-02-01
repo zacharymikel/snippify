@@ -1,0 +1,9 @@
+<div style="max-height: 85vh; overflow-y: scroll" align="center" appInfiniteScroller [attr.scrollPerecnt]="70" [immediateCallback]="true" [scrollCallback]="scrollCallback">
+    <app-feed-item *ngFor="let song of (state$ | async).newsFeed" [song]="song" [snippet]="true" [canDelete]="false"></app-feed-item>
+</div>
+
+<div *ngIf="dataLoaded && (state$ | async).newsFeed.length === 0" align="center">
+  <h1 style="color: white">You have not uploaded any songs <br> and are not following anyone <mat-icon>sentiment_very_dissatisfied</mat-icon></h1>
+</div>
+
+

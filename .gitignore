@@ -1,0 +1,60 @@
+# compiled source #
+###################
+*.class
+*.mp3
+api/tmp
+api/tmp/*
+dist/
+package-lock.json
+
+# node stuffs -__- #
+####################
+node_modules/
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# IDE Specific Files #
+#####################
+*.iml
+.idea
+.idea/*
+out/* 
+*.project 
+*.target
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+target
+
+# NPM Garbage Collection #
+##########################
+node_modules
+node_modules/**
+
+# DB Backup Files # 
+songs.json
+users.json
